@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Settings, CreditCard, Package, Heart, LogOut, ChevronRight, Wallet, Bell, Tag } from 'lucide-react';
+import { Settings, CreditCard, Package, Heart, LogOut, ChevronRight, Wallet, Bell, Tag, GraduationCap, Leaf } from 'lucide-react';
 
 export const UserProfile: React.FC = () => {
   return (
@@ -8,7 +8,16 @@ export const UserProfile: React.FC = () => {
       {/* Header */}
       <div className="bg-white pt-12 pb-6 px-6 rounded-b-[2.5rem] shadow-sm border-b border-gray-100">
          <div className="flex justify-between items-center mb-6">
-            <h1 className="text-2xl font-display font-bold text-gray-900">Profile</h1>
+            <div className="flex items-center gap-2">
+               {/* Small Logo Composition */}
+               <div className="h-8 w-8 bg-white rounded-full flex items-center justify-center shadow-sm border border-emerald-100 relative overflow-hidden">
+                  <div className="absolute bottom-0 w-5 h-3 bg-emerald-800 rounded-t-full"></div>
+                  <GraduationCap size={16} className="text-emerald-800 absolute top-1 z-10 fill-emerald-900" strokeWidth={1.5} />
+                  <Leaf size={8} className="text-emerald-500 fill-emerald-500 absolute left-0 top-2 -rotate-45" />
+                  <Leaf size={8} className="text-emerald-500 fill-emerald-500 absolute right-0 top-2 rotate-45" />
+               </div>
+               <h1 className="text-2xl font-display font-bold text-gray-900">Profile</h1>
+            </div>
             <button className="p-2 bg-gray-50 rounded-full text-gray-600 hover:bg-gray-100 transition-colors">
                <Settings size={20} />
             </button>

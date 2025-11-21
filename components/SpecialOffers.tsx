@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Percent, Tag, Clock, ArrowRight } from 'lucide-react';
+import { Percent, Tag, Clock, ArrowRight, GraduationCap, Leaf } from 'lucide-react';
 import { Product } from '../types';
 
 interface SpecialOffersProps {
@@ -15,9 +15,23 @@ export const SpecialOffers: React.FC<SpecialOffersProps> = ({ onProductClick, pr
   return (
     <div className="pb-32 animate-fade-in bg-gray-50 min-h-screen">
       {/* Header */}
-      <div className="px-6 pt-8 pb-6 sticky top-0 z-20 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
-        <h1 className="text-2xl font-display font-bold text-gray-900">Special Offers</h1>
-        <p className="text-xs text-gray-500 font-medium">Student Deals & Bundles</p>
+      <div className="px-6 pt-8 pb-6 sticky top-0 z-20 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm flex items-center justify-between">
+        <div>
+          <div className="flex items-center gap-2 mb-0.5">
+             {/* Small Logo Composition */}
+             <div className="h-8 w-8 bg-white rounded-full flex items-center justify-center shadow-sm border border-emerald-100 relative overflow-hidden">
+                <div className="absolute bottom-0 w-5 h-3 bg-emerald-800 rounded-t-full"></div>
+                <GraduationCap size={16} className="text-emerald-800 absolute top-1 z-10 fill-emerald-900" strokeWidth={1.5} />
+                <Leaf size={8} className="text-emerald-500 fill-emerald-500 absolute left-0 top-2 -rotate-45" />
+                <Leaf size={8} className="text-emerald-500 fill-emerald-500 absolute right-0 top-2 rotate-45" />
+             </div>
+             <h1 className="text-2xl font-display font-bold text-gray-900">Special Offers</h1>
+          </div>
+          <p className="text-xs text-gray-500 font-medium ml-8">Student Deals & Bundles</p>
+        </div>
+        <div className="bg-red-50 text-red-500 px-2 py-1 rounded-lg text-xs font-bold">
+           Hot
+        </div>
       </div>
 
       <div className="p-6 space-y-6">
